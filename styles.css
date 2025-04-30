@@ -1,0 +1,128 @@
+body {
+    background-color: #7bb3fc;
+}
+
+/* Resetando margens e paddings padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos do cabeçalho */
+header {
+    background-color: #32383d;
+    color: white;
+    padding: 15px 30px;
+    text-align: left;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+header h1 {
+    font-family: Arial, sans-serif;
+    font-size: 2rem;
+}
+
+header .mundo {
+    font-weight: bold;
+    color: #f71e6c;
+}
+
+header .senai {
+    font-weight: bold;
+    color: #2f67e7;
+}
+
+/* Retângulo com bordas arredondadas */
+.rectangle {
+    background-color: #ffffff;
+    color: white;
+    width: 80%;
+    height: 800px;
+    margin: 20px auto;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+
+/* Container dos círculos */
+.circles-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 60%;
+}
+
+/* Estilos dos círculos */
+.circle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle-content {
+    width: 100px;
+    height: 100px;
+    background-color: #1f1c1d;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* Estilos do texto abaixo dos círculos */
+.circle p {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    color: white;
+}
+
+/* Estilos do conteúdo */
+.content {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 1.2rem;
+}
+
+.nameGrupo {
+    font-weight: bold;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #32383d;
+    color: white;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 10px 0;
+    font-family: Arial, sans-serif;
+    z-index: 999; /* Garante que fique por cima */
+}
+
+@media (max-width: 600px) {
+    footer {
+        font-size: 0.8rem;
+        padding: 8px 0;
+    }
+}
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.footer-content img {
+    width: 25px;
+    height: 25px;
+}
+.footer-content p {
+    font-size: 0.85rem;
+    margin: 0;
+} 
