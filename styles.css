@@ -16,6 +16,8 @@ header {
     color: white;
     padding: 15px 30px;
     text-align: left;
+    position: relative; /* Isso ajuda a evitar problemas de sobreposição */
+    z-index: 100; /* Garante que o cabeçalho fique visível acima dos outros elementos */
 }
 
 .header-content {
@@ -60,113 +62,6 @@ header .senai {
 
 .nameGrupo {
     font-weight: bold;
-}
-
-/* ======= CÍRCULOS ======= */
-.circles-container {
-    display: flex;
-    justify-content: space-evenly;
-    width: 60%;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
-.circle {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.circle-content {
-    width: 140px;
-    height: 140px;
-    background-color: #1f1c1d;
-    border-radius: 50%;
-    margin-bottom: 10px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.circle p {
-    font-size: 1rem;
-    color: white;
-    text-align: center;
-}
-
-/* ======= FOOTER ======= */
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #32383d;
-    color: white;
-    text-align: center;
-    font-size: 0.9rem;
-    padding: 10px 0;
-    z-index: 999;
-}
-
-.footer-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.footer-content img {
-    width: 25px;
-    height: 25px;
-}
-
-.footer-content p {
-    font-size: 0.85rem;
-    margin: 0;
-}
-
-/* ======= INTERAÇÃO (Hover) ======= */
-@media (min-width: 769px) {
-    .circle-content:hover {
-        transform: scale(1.2);
-        background-color: #2f67e7;
-    }
-}
-
-/* ======= RESPONSIVIDADE (TELAS PEQUENAS) ======= */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 1.5rem;
-        text-align: center;
-    }
-
-    .header-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .rectangle {
-        width: 90%;
-        padding: 30px 10px;
-    }
-
-    .circles-container {
-        width: 90%;
-        gap: 20px;
-    }
-
-    .circle-content {
-        width: 100px;
-        height: 100px;
-    }
-
-    .circle p {
-        font-size: 0.9rem;
-    }
-
-    footer {
-        font-size: 0.8rem;
-        padding: 8px 0;
-    }
 }
 
 /* ======= JOGOS (quadrados com scroll-snap) ======= */
@@ -225,3 +120,39 @@ footer {
     cursor: grabbing;
     user-select: none;
 }
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #32383d;
+    color: white;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 10px 0;
+    font-family: Arial, sans-serif;
+    z-index: 999; /* Garante que fique por cima */
+}
+
+@media (max-width: 768px) {
+    .circles-container {
+        flex-wrap: wrap;
+        gap: 20px;
+        width: 90%;
+    }
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.footer-content img {
+    width: 25px;
+    height: 25px;
+}
+.footer-content p {
+    font-size: 0.85rem;
+    margin: 0;
+} 
