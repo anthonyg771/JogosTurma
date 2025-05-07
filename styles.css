@@ -62,37 +62,6 @@ header .senai {
     font-weight: bold;
 }
 
-/* ======= CÍRCULOS ======= */
-.circles-container {
-    display: flex;
-    justify-content: space-evenly;
-    width: 60%;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
-.circle {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.circle-content {
-    width: 140px;
-    height: 140px;
-    background-color: #1f1c1d;
-    border-radius: 50%;
-    margin-bottom: 10px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.circle p {
-    font-size: 1rem;
-    color: white;
-    text-align: center;
-}
-
 /* ======= FOOTER ======= */
 footer {
     position: fixed;
@@ -124,104 +93,23 @@ footer {
     margin: 0;
 }
 
-/* ======= INTERAÇÃO (Hover) ======= */
-@media (min-width: 769px) {
-    .circle-content:hover {
-        transform: scale(1.2);
-        background-color: #2f67e7;
-    }
-}
-
-/* ======= RESPONSIVIDADE (TELAS PEQUENAS) ======= */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 1.5rem;
-        text-align: center;
-    }
-
-    .header-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .rectangle {
-        width: 90%;
-        padding: 30px 10px;
-    }
-
-    .circles-container {
-        width: 90%;
-        gap: 20px;
-    }
-
-    .circle-content {
-        width: 100px;
-        height: 100px;
-    }
-
-    .circle p {
-        font-size: 0.9rem;
-    }
-
-    footer {
-        font-size: 0.8rem;
-        padding: 8px 0;
-    }
-}
-
-/* ======= JOGOS (quadrados com scroll-snap) ======= */
-.games-container {
+.gameC{
     display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto; /* Permitir rolagem horizontal */
-    gap: 2rem;
-    padding: 0 4rem; /* Adicionando espaço nas bordas para quadrados "cortados" */
-    margin-top: 7rem; /* Ajuste para mover os quadrados para baixo */
-    scroll-snap-type: x mandatory; /* Habilita o scroll-snap */
-    scroll-padding: 4rem;
-    cursor: grab;
+    height: 250px;
+    width: 80%;
+    flex-direction: row;
+    justify-items: center;
 }
 
-/* Esconder as barras de rolagem */
-.games-container::-webkit-scrollbar {
-    display: none; /* Chrome, Safari */
+.game{
+    height: 200px;
+    width: 200px;
+    background-color: black;
+    margin: 10px;
 }
 
-.games-container::-webkit-scrollbar {
-    width: 0;  /* Para Firefox */
-}
-
-.game-box {
-    height: 15rem;
-    width: 12rem;
-    background-color: #000; /* Cor de fundo dos quadrados */
-    border-radius: 5px;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
-    flex-shrink: 0;
-    scroll-snap-align: start; /* Faz com que o quadrado seja alinhado no início do container */
-}
-
-/* Alterar cor e aumentar o tamanho ao passar o mouse */
-.game-box:hover {
-    transform: scale(1.05);
-    background-color: #2f67e7;
-}
-
-/* Responsividade para telas pequenas */
-@media (max-width: 768px) {
-    .game-box {
-        width: 200px;
-        height: 200px;
-    }
-
-    .games-container {
-        padding: 0 30px;
-        scroll-padding: 30px;
-    }
-}
-
-/* Cursor para quando estiver arrastando */
-.games-container.dragging {
-    cursor: grabbing;
-    user-select: none;
+.gameT{
+    color: #2f67e7;
+    font-size: 100px;
+    margin-bottom: 50px;
 }
