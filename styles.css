@@ -1,15 +1,16 @@
-body {
-    background-color: #7bb3fc;
-}
-
-/* Resetando margens e paddings padrão */
+/* ======= RESET GERAL ======= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilos do cabeçalho */
+body {
+    background-color: #428ef3;
+    font-family: Arial, sans-serif;
+}
+
+/* ======= CABEÇALHO ======= */
 header {
     background-color: #32383d;
     color: white;
@@ -24,42 +25,52 @@ header {
 }
 
 header h1 {
-    font-family: Arial, sans-serif;
     font-size: 2rem;
 }
 
 header .mundo {
     font-weight: bold;
-    color: #f71e6c;
+    color: #2f67e7;
 }
 
 header .senai {
     font-weight: bold;
-    color: #2f67e7;
+    color: #f71e6c;
 }
 
-/* Retângulo com bordas arredondadas */
+/* ======= CONTEÚDO PRINCIPAL ======= */
 .rectangle {
     background-color: #ffffff;
     color: white;
     width: 80%;
-    height: 800px;
+    min-height: 800px;
     margin: 20px auto;
     border-radius: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 50px;
+    padding: 50px 20px;
 }
 
-/* Container dos círculos */
+/* Conteúdo textual genérico */
+.content {
+    padding: 20px;
+    font-size: 1.2rem;
+}
+
+.nameGrupo {
+    font-weight: bold;
+}
+
+/* ======= CÍRCULOS ======= */
 .circles-container {
     display: flex;
     justify-content: space-evenly;
     width: 60%;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
-/* Estilos dos círculos */
 .circle {
     display: flex;
     flex-direction: column;
@@ -68,30 +79,21 @@ header .senai {
 }
 
 .circle-content {
-    width: 100px;
-    height: 100px;
+    width: 140px;
+    height: 140px;
     background-color: #1f1c1d;
     border-radius: 50%;
     margin-bottom: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-/* Estilos do texto abaixo dos círculos */
 .circle p {
-    font-family: Arial, sans-serif;
     font-size: 1rem;
     color: white;
+    text-align: center;
 }
 
-/* Estilos do conteúdo */
-.content {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    font-size: 1.2rem;
-}
-
-.nameGrupo {
-    font-weight: bold;
-}
+/* ======= FOOTER ======= */
 footer {
     position: fixed;
     bottom: 0;
@@ -101,16 +103,9 @@ footer {
     text-align: center;
     font-size: 0.9rem;
     padding: 10px 0;
-    font-family: Arial, sans-serif;
-    z-index: 999; /* Garante que fique por cima */
+    z-index: 999;
 }
 
-@media (max-width: 600px) {
-    footer {
-        font-size: 0.8rem;
-        padding: 8px 0;
-    }
-}
 .footer-content {
     display: flex;
     align-items: center;
@@ -118,11 +113,115 @@ footer {
     gap: 10px;
     flex-wrap: wrap;
 }
+
 .footer-content img {
     width: 25px;
     height: 25px;
 }
+
 .footer-content p {
     font-size: 0.85rem;
     margin: 0;
-} 
+}
+
+/* ======= INTERAÇÃO (Hover) ======= */
+@media (min-width: 769px) {
+    .circle-content:hover {
+        transform: scale(1.2);
+        background-color: #2f67e7;
+    }
+}
+
+/* ======= RESPONSIVIDADE (TELAS PEQUENAS) ======= */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .rectangle {
+        width: 90%;
+        padding: 30px 10px;
+    }
+
+    .circles-container {
+        width: 90%;
+        gap: 20px;
+    }
+
+    .circle-content {
+        width: 100px;
+        height: 100px;
+    }
+
+    .circle p {
+        font-size: 0.9rem;
+    }
+
+    footer {
+        font-size: 0.8rem;
+        padding: 8px 0;
+    }
+}
+
+/* ======= JOGOS (quadrados com scroll-snap) ======= */
+.games-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto; /* Permitir rolagem horizontal */
+    gap: 2rem;
+    padding: 0 4rem; /* Adicionando espaço nas bordas para quadrados "cortados" */
+    margin-top: 7rem; /* Ajuste para mover os quadrados para baixo */
+    scroll-snap-type: x mandatory; /* Habilita o scroll-snap */
+    scroll-padding: 4rem;
+    cursor: grab;
+}
+
+/* Esconder as barras de rolagem */
+.games-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+}
+
+.games-container::-webkit-scrollbar {
+    width: 0;  /* Para Firefox */
+}
+
+.game-box {
+    height: 15rem;
+    width: 12rem;
+    background-color: #000; /* Cor de fundo dos quadrados */
+    border-radius: 5px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    flex-shrink: 0;
+    scroll-snap-align: start; /* Faz com que o quadrado seja alinhado no início do container */
+}
+
+/* Alterar cor e aumentar o tamanho ao passar o mouse */
+.game-box:hover {
+    transform: scale(1.05);
+    background-color: #2f67e7;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+    .game-box {
+        width: 200px;
+        height: 200px;
+    }
+
+    .games-container {
+        padding: 0 30px;
+        scroll-padding: 30px;
+    }
+}
+
+/* Cursor para quando estiver arrastando */
+.games-container.dragging {
+    cursor: grabbing;
+    user-select: none;
+}
