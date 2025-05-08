@@ -92,24 +92,71 @@ footer {
     font-size: 0.85rem;
     margin: 0;
 }
+ /*games e button */
 
 .gameC{
     display: flex;
     height: 250px;
-    width: 80%;
+    width: 100%;
     flex-direction: row;
     justify-items: center;
-}
+    overflow: visible;
+    flex-wrap: wrap; /* Permite que os jogos quebrem para a próxima linha, se necessário */
+    justify-content: center; /* Centraliza os jogos horizontalmente */
+    gap: 20px; /* Espaço entre os quadrados */
+    
+    
 
+}
 .game{
     height: 200px;
     width: 200px;
     background-color: black;
-    margin: 10px;
+    margin: 20px;
+    display: flex; /* Ativa o flexbox dentro de cada game */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente *
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    border-radius: 12px;
+    position: relative; 
+    
 }
-
 .gameT{
     color: #2f67e7;
     font-size: 100px;
     margin-bottom: 50px;
+  
+}
+
+.titulo{
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+}
+.btnjogar {
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    display: flex;  /* Adicionado para centralizar o conteúdo dentro do botão */
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 40px;
+    background-color: #f71e6c;
+    border: rgb(14, 43, 109);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; 
+}
+.btnjogar:hover {
+    background-color: #c51455; /* Cor mais escura quando hover */
+    transform: scale(1.1); /* Efeito de crescimento */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); /* Efeito de sombra mais forte */
+}
+
+.btnjogar:active {
+    transform: scale(1.05); /* Efeito de redução ligeira ao clicar */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra mais suave no clique */
 }
