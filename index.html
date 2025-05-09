@@ -4,7 +4,180 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Site MUNDO SENAI</title>
-    <link rel="stylesheet" href="styles.css">
+    
+
+    <style>
+        /* ======= RESET GERAL ======= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(243, 243, 243);
+    font-family: Arial, sans-serif;
+}
+
+/* ======= CABEÇALHO ======= */
+header {
+    background-color: #32383d;
+    color: white;
+    padding: 15px 30px;
+    text-align: left;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+header .mundo {
+    font-weight: bold;
+    color: #2f67e7;
+}
+
+header .senai {
+    font-weight: bold;
+    color: #f71e6c;
+}
+
+/* ======= CONTEÚDO PRINCIPAL ======= */
+/* Conteúdo textual genérico */
+.content {
+    padding: 20px;
+    font-size: 1.2rem;
+}
+
+.nameGrupo {
+    font-weight: bold;
+}
+
+/* ======= FOOTER ======= */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #32383d;
+    color: white;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 10px 0;
+    z-index: 999;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.footer-content img {
+    width: 25px;
+    height: 25px;
+}
+
+.footer-content p {
+    font-size: 0.85rem;
+    margin: 0;
+}
+ /*games e button */
+
+.gameC{
+    display: flex;
+    height: 250px;
+    width: 100%;
+    flex-direction: row;
+    justify-items: center;
+    overflow: visible;
+    flex-wrap: wrap; /* Permite que os jogos quebrem para a próxima linha, se necessário */
+    justify-content: center; /* Centraliza os jogos horizontalmente */
+    gap: 20px; /* Espaço entre os quadrados */
+    
+    
+    
+
+}
+.game{
+    height: 200px;
+    width: 200px;
+    background-color: black;
+    margin: 20px;
+    display: flex; /* Ativa o flexbox dentro de cada game */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente *
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    border-radius: 12px;
+    position: relative; 
+    
+}
+.gameT{
+    color: #2f67e7;
+    font-size: 100px;
+    margin-bottom: 50px;
+  
+}
+
+.titulo{
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+}
+.btnjogar {
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    display: flex;  /* Adicionado para centralizar o conteúdo dentro do botão */
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 40px;
+    background-color: #3ddd3d;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    
+}
+
+#jogo1{
+    background-image: url(Jogo\ tralalero.png);
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+            
+}
+
+#jogo2{
+    background-image: url(Jogo\ Pokemon.png);
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+            
+}
+
+#jogo3{
+    background-image: url(Jogo\ Barbie.png);
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+            
+}
+
+#jogo4{
+    background-image: url(Jogo\ Cobra.png);
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+            
+}
+
+
+
+    </style>
 
 </head>
 <body>
@@ -22,10 +195,10 @@
         </div>
         <div class="gameC">
  
-            <div class="game">
+            <div class="game" id="jogo1">
                 <button class="btnjogar" >Jogar</button>
             </div>
-            <div class="game">
+            <div class="game" id="jogo3">
                 <button class="btnjogar" >Jogar</button>
             </div>
             <div class="game">
@@ -40,10 +213,10 @@
         </div>
         
         <div class="gameC">
-            <div class="game">
+            <div class="game" id="jogo2">
                 <button class="btnjogar" >Jogar</button>
             </div>
-            <div class="game">
+            <div class="game" id="jogo4">
                 <button class="btnjogar" >Jogar</button>
             </div>           
             <div class="game">
