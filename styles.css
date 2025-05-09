@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #428ef3;
+    background-color: rgb(243, 243, 243);
     font-family: Arial, sans-serif;
 }
 
@@ -39,19 +39,6 @@ header .senai {
 }
 
 /* ======= CONTEÚDO PRINCIPAL ======= */
-.rectangle {
-    background-color: #ffffff;
-    color: white;
-    width: 80%;
-    min-height: 800px;
-    margin: 20px auto;
-    border-radius: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 50px 20px;
-}
-
 /* Conteúdo textual genérico */
 .content {
     padding: 20px;
@@ -142,21 +129,12 @@ footer {
     align-items: center;
     width: 90px;
     height: 40px;
-    background-color: #f71e6c;
-    border: rgb(14, 43, 109);
+    background-color: #3ddd3d;
     padding: 10px 20px;
-    border-radius: 8px;
     font-size: 1rem;
     cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; 
-}
-.btnjogar:hover {
-    background-color: #c51455; /* Cor mais escura quando hover */
-    transform: scale(1.1); /* Efeito de crescimento */
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); /* Efeito de sombra mais forte */
+    border-radius: 8px;
+    
 }
 
-.btnjogar:active {
-    transform: scale(1.05); /* Efeito de redução ligeira ao clicar */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra mais suave no clique */
-}
+
