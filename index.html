@@ -3,289 +3,527 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site MUNDO SENAI</title>
-    
-
+    <title>MUNDO SENAI - Jogos Educativos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* ======= RESET GERAL ======= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        /* ======= VARIÁVEIS DE CORES ======= */
+        :root {
+            --primary: #0066cc;
+            --secondary: #ff3366;
+            --accent: #00cc66;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --card-bg: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
 
-body {
-    background-color: rgb(243, 243, 243);
-    font-family: Arial, sans-serif;
-}
+        /* ======= RESET E BASE ======= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* ======= CABEÇALHO ======= */
-header {
-    background-color: #32383d;
-    color: white;
-    padding: 15px 30px;
-    text-align: left;
-}
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            padding-bottom: 100px;
+        }
 
-.header-content {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
+        /* ======= CABEÇALHO MODERNO ======= */
+        header {
+            background: linear-gradient(135deg, var(--dark), #16213e);
+            color: white;
+            padding: 1.5rem 5%;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-header h1 {
-    font-size: 2rem;
-}
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-header .mundo {
-    font-weight: bold;
-    color: #2f67e7;
-}
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
 
-header .senai {
-    font-weight: bold;
-    color: #f71e6c;
-}
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
 
-/* ======= CONTEÚDO PRINCIPAL ======= */
-/* Conteúdo textual genérico */
-.content {
-    padding: 20px;
-    font-size: 1.2rem;
-}
+        header h1 {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
 
-.nameGrupo {
-    font-weight: bold;
-}
+        /* ======= HERO SECTION ======= */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 4rem 5%;
+            margin-bottom: 2rem;
+        }
 
-/* ======= FOOTER ======= */
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #32383d;
-    color: white;
-    text-align: center;
-    font-size: 0.9rem;
-    padding: 10px 0;
-    z-index: 999;
-}
+        .hero h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1rem;
+        }
 
-.footer-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-}
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
 
-.footer-content img {
-    width: 25px;
-    height: 25px;
-}
+        /* ======= SEÇÃO DE JOGOS ======= */
+        .games-section {
+            padding: 0 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
 
-.footer-content p {
-    font-size: 0.85rem;
-    margin: 0;
-}
- /*games e button */
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
 
-.gameC{
-    display: flex;
-    height: 250px;
-    width: 100%;
-    flex-direction: row;
-    justify-items: center;
-    overflow: visible;
-    flex-wrap: wrap; /* Permite que os jogos quebrem para a próxima linha, se necessário */
-    justify-content: center; /* Centraliza os jogos horizontalmente */
-    gap: 20px; /* Espaço entre os quadrados */
-    
-    
-    
+        .section-title h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            display: inline-block;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            padding-bottom: 10px;
+        }
 
-}
-.game{
-    height: 200px;
-    width: 200px;
-    background-color: black;
-    margin: 20px;
-    display: flex; /* Ativa o flexbox dentro de cada game */
-    justify-content: center; /* Centraliza o conteúdo horizontalmente *
-    align-items: center; /* Centraliza o conteúdo verticalmente */
-    border-radius: 12px;
-    position: relative; 
-    
-}
-.gameT{
-    color: #2f67e7;
-    font-size: 100px;
-    margin-bottom: 50px;
-  
-}
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 3px;
+        }
 
-.titulo{
-    font-size: 50px;
-    display: flex;
-    justify-content: center;
-}
-.btnjogar {
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    position: absolute;
-    display: flex;  /* Adicionado para centralizar o conteúdo dentro do botão */
-    justify-content: center;
-    align-items: center;
-    width: 90px;
-    height: 40px;
-    background-color: #3ddd3d;
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 8px;
-    
-}
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 3rem;
+        }
 
-#jogo1{
-    background-image: url(Jogo\ tralalero.png);
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Evita repetição da imagem */
+        .game-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .game-image {
+            height: 180px;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .game-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1rem;
+            color: white;
+        }
+
+        .game-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .game-author {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .game-content {
+            padding: 1.2rem;
+        }
+
+        .game-description {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .play-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--accent), #00b359);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+        }
+
+        .play-btn:hover {
+            background: linear-gradient(45deg, #00b359, var(--accent));
+            box-shadow: 0 5px 15px rgba(0, 204, 102, 0.3);
+        }
+
+        /* ======= FOOTER ATUALIZADO ======= */
+        footer {
+            background: linear-gradient(135deg, var(--dark), #16213e);
+            color: white;
+            padding: 2rem 5%;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .footer-logo h3 {
+            font-size: 1.3rem;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .footer-about p {
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            opacity: 0.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-links h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .footer-links h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            padding-left: 5px;
+            color: var(--accent);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        /* ======= MEDIA QUERIES ======= */
+        @media (max-width: 768px) {
+            .games-grid {
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+                gap: 20px;
+            }
             
-}
-
-#jogo2{
-    background-image: url(Jogo\ Pokemon.png);
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Evita repetição da imagem */
+            .game-image {
+                height: 160px;
+            }
             
-}
+            .hero {
+                padding: 3rem 5%;
+            }
+        }
 
-#jogo3{
-    background-image: url(Jogo\ Barbie.png);
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Evita repetição da imagem */
+        @media (max-width: 480px) {
+            .games-grid {
+                grid-template-columns: 1fr;
+            }
             
-}
-
-#jogo4{
-    background-image: url(Jogo\ Cobra.png);
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Evita repetição da imagem */
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
             
-}
-
-#jogo5{
-    background-image: url(Jogo\ Hacker.png);
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Evita repetição da imagem */
+            .hero p {
+                font-size: 1rem;
+            }
             
-}
-
-#jogo7{
-    background-image: url(Jogo\ Bolhas.png);
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Evita repetição da imagem */
-            
-}
-
-#jogo8{
-    background-image: url(Jogo\ Elementos.png);
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Evita repetição da imagem */
-            
-}
-
-#jogo8{
-    background-image: url(Jogo\ Elementos.png);
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Evita repetição da imagem */
-            
-}
-
-#jogo9{
-    background-image: url(Jogo\ Memoria.png);
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Evita repetição da imagem */
-            
-}
-
-#jogo10{
-    background-image: url(Jogo\ Labirinto.png);
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Evita repetição da imagem */
-            
-}
-
-
-
-
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
-
 </head>
 <body>
 
     <header>
         <div class="header-content">
-            <h1><span class="mundo">MUNDO</span> <span class="senai">SENAI</span></h1>
+            <div class="logo">
+
+                <h1><span class="mundo">MUNDO</span> <span class="senai">SENAI</span></h1>
+            </div>
         </div>
     </header>
 
-    <!-- Retângulo com bordas arredondadas -->
- 
-        <div class="gameT">
-            <h1 class="titulo">Turma Jogos</h1>
-        </div>
-        <div class="gameC">
- 
-            <div class="game" id="jogo1">
-                <button class="btnjogar"onclick="window.location.href='https://luizeve.github.io/Bombadiro-vs-tralalero-Mobile/'">Jogar</button>
-            </div>
-            <div class="game" id="jogo3">
-                <button class="btnjogar" >Jogar</button>
-            </div>
-            <div class="game" id="jogo5">
-                <button class="btnjogar" >Jogar</button>
-            </div>
-            <div class="game" id="jogo7">
-                <button class="btnjogar" >Jogar</button>
-            </div>
-            <div class="game" id="jogo9">
-                <button class="btnjogar">Jogar</button>
-            </div>
+    <section class="hero">
+        <h2>Jogos Educativos</h2>
+        <p>Explore nossa coleção de jogos desenvolvidos pela turma EMIDES3AM do SENAI para aprendizado e diversão!</p>
+    </section>
+
+    <section class="games-section">
+        <div class="section-title">
+            <h2>Nossos Jogos</h2>
         </div>
         
-        <div class="gameC">
-            <div class="game" id="jogo2">
-                <button class="btnjogar" >Jogar</button>
-            </div>
-            <div class="game" id="jogo4">
-                <button class="btnjogar" >Jogar</button>
-            </div>           
-            <div class="game">
-                <button class="btnjogar" >Jogar</button>
-            </div>           
-            <div class="game" id="jogo8">
-                <button class="btnjogar" >Jogar</button>
-            </div>
-            <div class="game" id="jogo10">
-                <button class="btnjogar" >Jogar</button>
+        <div class="games-grid">
+            <!-- Jogo 1 -->
+            <div class="game-card">
+                <div class="game-image" style="background-image: url('Imagem11.png');">
+                    <div class="game-overlay">
+                        <h3 class="game-title">Bombadiro vs Tralalero</h3>
+                        <p class="game-author">Por: Equipe SENAI</p>
+                    </div>
+                </div>
+                <div class="game-content">
+                    <p class="game-description">Um jogo de estratégia emocionante onde você precisa desarmar bombas enquanto evita os Tralaleros.</p>
+                    <a href="https://luizeve.github.io/Bombadiro-vs-tralalero-Mobile/" class="play-btn">Jogar Agora</a>
+                </div>
             </div>
             
+            <!-- Jogo 2 -->
+            <div class="game-card">
+                <div class="game-image" style="background-image: url('https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg');">
+                    <div class="game-overlay">
+                        <h3 class="game-title">Aventura Pokémon</h3>
+                        <p class="game-author">Por: Equipe SENAI</p>
+                    </div>
+                </div>
+                <div class="game-content">
+                    <p class="game-description">Capture Pokémon e enfrente desafios nessa incrível aventura inspirada no mundo dos monstrinhos de bolso.</p>
+                    <button class="play-btn">Em Breve</button>
+                </div>
+            </div>
+            
+            <!-- Jogo 3 -->
+            <div class="game-card">
+                <div class="game-image" style="background-image: url('https://img.freepik.com/free-vector/gradient-pink-blue-abstract-background_23-2149124505.jpg');">
+                    <div class="game-overlay">
+                        <h3 class="game-title">Mundo da Barbie</h3>
+                        <p class="game-author">Por: Equipe SENAI</p>
+                    </div>
+                </div>
+                <div class="game-content">
+                    <p class="game-description">Explore o mundo mágico da Barbie com diversos minijogos e atividades criativas.</p>
+                    <button class="play-btn">Em Breve</button>
+                </div>
+            </div>
+            
+            <!-- Jogo 4 -->
+            <div class="game-card">
+                <div class="game-image" style="background-image: url('https://img.freepik.com/free-vector/gradient-green-background_23-2148352232.jpg');">
+                    <div class="game-overlay">
+                        <h3 class="game-title">Jogo da Cobra</h3>
+                        <p class="game-author">Por: Equipe SENAI</p>
+                    </div>
+                </div>
+                <div class="game-content">
+                    <p class="game-description">O clássico jogo da cobrinha reinventado com novos desafios e power-ups especiais.</p>
+                    <button class="play-btn">Em Breve</button>
+                </div>
+            </div>
+            
+            <!-- Jogo 5 -->
+            <div class="game-card">
+                <div class="game-image" style="background-image: url('https://img.freepik.com/free-vector/dark-gradient-background-with-copy-space_53876-99548.jpg');">
+                    <div class="game-overlay">
+                        <h3 class="game-title">Desafio Hacker</h3>
+                        <p class="game-author">Por: Equipe SENAI</p>
+                    </div>
+                </div>
+                <div class="game-content">
+                    <p class="game-description">Um jogo de quebra-cabeças lógicos onde você precisa resolver desafios de programação.</p>
+                    <button class="play-btn">Em Breve</button>
+                </div>
+            </div>
+            
+            <!-- Jogo 6 -->
+            <div class="game-card">
+                <div class="game-image" style="background-image: url('https://img.freepik.com/free-vector/gradient-blue-purple-abstract-background_23-2149124956.jpg');">
+                    <div class="game-overlay">
+                        <h3 class="game-title">Explosão de Bolhas</h3>
+                        <p class="game-author">Por: Equipe SENAI</p>
+                    </div>
+                </div>
+                <div class="game-content">
+                    <p class="game-description">Estoure bolhas combinando cores nesse jogo viciante e colorido.</p>
+                    <button class="play-btn">Em Breve</button>
+                </div>
+            </div>
         </div>
-        
-        
-  
+    </section>
 
     <footer>
         <div class="footer-content">
-            <img src="logo-senai.png" alt="Logo SENAI">
-            <p>© 2025 Mundo Senai | Desenvolvido pela Turma EMIDES3AM</p>
+            <div class="footer-about">
+                <div class="footer-logo">
+                    <img src="logo-senai.png" alt="Logo SENAI">
+                    <h3>MUNDO SENAI</h3>
+                </div>
+                <p>Plataforma de jogos educativos desenvolvidos pelos alunos do SENAI para promover o aprendizado através da diversão.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="YouTube">▶️</a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Links Rápidos</h4>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Jogos</a></li>
+                    <li><a href="#">Sobre Nós</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Turmas</h4>
+                <ul>
+                    <li><a href="#">EMIDES3AM</a></li>
+                    <li><a href="#">Outros Projetos</a></li>
+                    <li><a href="#">Galeria</a></li>
+                    <li><a href="#">Eventos</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>© 2025 Mundo Senai | Todos os direitos reservados | Desenvolvido pela Turma EMIDES3AM</p>
         </div>
     </footer>
 
 </body>
-<script>
-    
-</script>
 </html>
