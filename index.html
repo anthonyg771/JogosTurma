@@ -375,6 +375,34 @@
                 grid-template-columns: 1fr;
             }
         }
+            .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 24px;
+            margin-top: -12px;
+             
+            }
+
+            .filter-btn {
+            background-color: #6d28d9; /* roxo estilo Tailwind 'purple-700' */
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            }
+
+            .filter-btn:hover {
+            background-color: #5b21b6; /* roxo mais escuro no hover */
+            }
+
+
+        
     </style>
 </head>
 <body>
@@ -397,6 +425,14 @@
         <div class="section-title">
             <h2>Nossos Jogos</h2>
         </div>
+        <div class="mb-6 flex justify-end space-x-2">
+  <div class="filter-buttons">
+  <button class="filter-btn">1º EM</button>
+  <button class="filter-btn">2º EM</button>
+  <button class="filter-btn">3º EM</button>
+</div>
+</div>
+
         
         <div class="games-grid">
             <!-- Jogo 1 -->
@@ -404,7 +440,7 @@
                 <div class="game-image" style="background-image: url('Tralalero.png');">
                     <div class="game-overlay">
                         <h3 class="game-title">Bombadiro vs Tralalero</h3>
-                        <p class="game-Nivel">Nivel: Equipe SENAI</p>
+                        <p class="game-Nivel">Nivel: 2º EM</p>
                     </div>
                 </div>
                 <div class="game-content">
@@ -418,7 +454,7 @@
                 <div class="game-image" style="background-image: url('Pokemon.png');">
                     <div class="game-overlay">
                         <h3 class="game-title">Aventura Pokémon</h3>
-                        <p class="game-Nivel">Nivel: Equipe SENAI</p>
+                        <p class="game-Nivel">Nivel: 2º EM</p>
                     </div>
                 </div>
                 <div class="game-content">
@@ -432,7 +468,7 @@
                 <div class="game-image" style="background-image: url('Barbie.png');">
                     <div class="game-overlay">
                         <h3 class="game-title">Barbie: A Diva fashionista</h3>
-                        <p class="game-Nivel">Nivel: Equipe SENAI</p>
+                        <p class="game-Nivel">Nivel: 2º EM</p>
                     </div>
                 </div>
                 <div class="game-content">
@@ -446,7 +482,7 @@
                 <div class="game-image" style="background-image: url('Jogo\ da\ velha.png');">
                     <div class="game-overlay">
                         <h3 class="game-title">Jogo da Velha</h3>
-                        <p class="game-Nivel">Nivel: Equipe SENAI</p>
+                        <p class="game-Nivel">Nivel: 3º EM</p>
                     </div>
                 </div>
                 <div class="game-content">
@@ -460,7 +496,7 @@
                 <div class="game-image" style="background-image: url('Hacker.jpg');">
                     <div class="game-overlay">
                         <h3 class="game-title">Desafio Hacker</h3>
-                        <p class="game-Nivel">Nivel: Equipe SENAI</p>
+                        <p class="game-Nivel">Nivel: 2º EM</p>
                     </div>
                 </div>
                 <div class="game-content">
@@ -474,7 +510,7 @@
                 <div class="game-image" style="background-image: url('Bolha.png');">
                     <div class="game-overlay">
                         <h3 class="game-title">Jogo Diagrama Venm</h3>
-                        <p class="game-Nivel">Nivel: Ensimo 1</p>
+                        <p class="game-Nivel">Nivel: 1º EM</p>
                     </div>
                 </div>
                 <div class="game-content">
@@ -487,7 +523,7 @@
                 <div class="game-image" style="background-image: url('Elementos.png');">
                     <div class="game-overlay">
                         <h3 class="game-title">Elementos Alquímia</h3>
-                        <p class="game-Nivel">Nivel: Equipe SENAI</p>
+                        <p class="game-Nivel">Nivel: 1º EM</p>
                     </div>
                 </div>
                 <div class="game-content">
@@ -501,7 +537,7 @@
                 <div class="game-image" style="background-image: url('Labirinto.png');">
                     <div class="game-overlay">
                         <h3 class="game-title">Labirinto Geometrico</h3>
-                        <p class="game-Nivel">Nivel: Equipe SENAI</p>
+                        <p class="game-Nivel">Nivel: 2º EM</p>
                     </div>
                 </div>
                 <div class="game-content">
@@ -515,7 +551,7 @@
                 <div class="game-image" style="background-image: url('Memoria.png');">
                     <div class="game-overlay">
                         <h3 class="game-title">Memoria Geometrica</h3>
-                        <p class="game-Nivel">Nivel: Equipe SENAI</p>
+                        <p class="game-Nivel">Nivel: 1º EM</p>
                     </div>
                 </div>
                 <div class="game-content">
@@ -529,7 +565,7 @@
                 <div class="game-image" style="background-image: url('');">
                     <div class="game-overlay">
                         <h3 class="game-title">...</h3>
-                        <p class="game-Nivel">Nivel: Equipe SENAI</p>
+                        <p class="game-Nivel">Nivel: 1º EM</p>
                     </div>
                 </div>
                 <div class="game-content">
@@ -582,6 +618,25 @@
             <p>© 2025 Mundo Senai | Todos os direitos reservados | Desenvolvido pela Turma EMIDES3AM (Luiz e Anthony)</p>
         </div>
     </footer>
+    <script>
+         const filterButtons = document.querySelectorAll('.filter-btn');
+    const gameCards = document.querySelectorAll('.game-card');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const level = button.innerText.trim();
+            
+            gameCards.forEach(card => {
+                const nivel = card.querySelector('.game-Nivel').innerText.trim();
+                if (nivel.includes(level)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+    </script>
 
 </body>
 </html>
